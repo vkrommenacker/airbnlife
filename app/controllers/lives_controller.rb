@@ -6,7 +6,6 @@ class LivesController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -28,7 +27,7 @@ class LivesController < ApplicationController
   def set_life
     @life = Life.find(params[:id])
   end
-  
+
   def life_params
     params.require(:life).permit(:name, :price_per_day, :description, :picture_url, :city, :address, :owner_id)
   end
