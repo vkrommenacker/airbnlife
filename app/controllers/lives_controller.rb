@@ -1,14 +1,16 @@
 class LivesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  def show
+
+  def index
   end
 
-  def create
+  def show
   end
 
   def new
   end
 
-  def index
+  def create
   end
+
 end
