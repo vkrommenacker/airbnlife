@@ -1,2 +1,10 @@
-<h1>Lives#show</h1>
-<p>Find me in app/views/lives/show.html.erb</p>
+<h1><%= @life.name %></h1>
+
+<div>
+  <p><%= @life.picture_url %></p>
+  <p><%= @life.description %></p>
+  <p><%= @life.price_per_day %></p>
+  <%= User.find(@life.owner_id).first_name %>
+</div>
+
+<%= link_to "Back to lives", root_path %>
