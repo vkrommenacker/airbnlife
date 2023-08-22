@@ -26,7 +26,7 @@ life1 = Life.create!(
   name: "Allez à lasso de votre vie!",
   price_per_day: "50",
   description: "Dans l'immensité de l'Ouest américain, le cowboy John chevauchait avec audace, veillant sur le bétail, bravant bandits et tempêtes. Ses nuits autour du feu tressaillaient d'histoires épiques, incrustant dans son regard le mélange unique d'aventure et de solitude des grands espaces.",
-  picture_url: "app/assets/images/coiffeur.jpg",
+  picture_url: "app/assets/images/cowboy.jpg",
   city: "Nashville",
   address: user1.address,
   owner_id: user1.id
@@ -88,6 +88,7 @@ life4 = Life.create!(
   name: "S'il y en a pour un, il y en pour 10!",
   price_per_day: "35",
   description: "Être un père de famille nombreuse est un tourbillon joyeux de responsabilités et de moments inestimables, jonglant entre les rires enfantins, les aventures en groupe et les défis constants, tout en créant un foyer chaleureux et rempli d'amour. Chaque journée est une histoire unique, tissée d'amour fraternel, de rires partagés et de précieux souvenirs qui forgent des liens inébranlables au sein de cette tribu unie.",
+  picture_url: "app/assets/images/famille.jpg",
   city: "Bazarland",
   address: user4.address,
   owner_id: user4.id
@@ -106,7 +107,7 @@ user5 = User.create!(
 )
 
 life5 = Life.create!(
-  name: "Comme Hélène de Troie avec sa beauté légendaire, les mathématiques me font tourner la tête à 180 degrés !",
+  name: "Echec et math!",
   price_per_day: "65",
   description: "La vie de professeure de mathématiques est une quête d'illumination intellectuelle. Chaque jour, vous guidez les élèves à travers les dédales des nombres et des équations, éveillant la compréhension et la logique. Vous façonnez des esprits analytiques prêts à relever les défis mathématiques de la vie.",
   picture_url: "app/assets/images/professeur.jpg",
@@ -148,7 +149,7 @@ user7 = User.create!(
 )
 
 life7 = Life.create!(
-  name: "Je travaille avec des couleurs, mais mon argent est toujours en noir et blanc ! ",
+  name: "Un peu de couleurs dans votre vie! ",
   price_per_day: "30",
   description: "Frida Calot, peintre passionnée, manie les pinceaux comme des extensions de son âme. À travers chaque toile, elle tisse des rêves et des émotions, mêlant les couleurs avec une grâce unique. Les paysages qu'elle crée sont des fenêtres ouvertes sur des mondes intérieurs, reflétant sa profonde connexion avec l'art et la puissance de la créativité. Chaque coup de pinceau de Frida évoque une histoire silencieuse, laissant une empreinte indélébile dans l'univers visuel qu'elle façonne.",
   picture_url: "app/assets/images/peintre.jpg",
