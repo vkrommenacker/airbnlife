@@ -1,4 +1,4 @@
-<h1>Lives#new</h1>
+<h1>Create my life for rent</h1>
 
   <div class="container">
       <%= simple_form_for @life, html: { multipart: true } do |f| %>
@@ -7,7 +7,7 @@
       <%= f.input :description %>
       <%= f.input :city %>
       <%= f.input :address %>
-      <%= f.input :owner_id %>
+      <%# <%= f.input :owner_id %>
 
       <%= f.input :picture_url, as: :file %>
 
