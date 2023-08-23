@@ -35,6 +35,6 @@ class LivesController < ApplicationController
   end
 
   def life_params
-    params.require(:life).permit(:name, :price_per_day, :description, :picture_url, :city, :address, :owner_id)
+    params.require(:life).permit(:name, :price_per_day, :description, :picture_url, :city, :address, :owner_id, :photo)
   end
 end
