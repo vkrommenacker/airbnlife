@@ -1,7 +1,7 @@
 <h1><%= @life.title %></h1>
 
 <div>
-  <p><%= @life.picture_url %></p>
+  <p><%= @life.photo.key %></p>
   <p><%= @life.description %></p>
   <p><%= @life.price_per_day %></p>
   <%= User.find(@life.owner_id).first_name %>
