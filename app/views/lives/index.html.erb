@@ -39,7 +39,7 @@
   <% @lives.each do |life|%>
     <div class="life">
       <h3><%= life.title %></h3>
-      <%= cl_image_tag = life.picture_url  %>
+      <%= cl_image_tag life.photo.key, height: 300, width: 400, crop: :fill %>
       <p><%= User.find(life.owner_id).city %></p>
       <p><%= life.price_per_day.round%>€ per day </p>
       <p><%= User.find(life.owner_id).first_name%> <%= User.find(life.owner_id).last_name.first%>.</p>
