@@ -17,19 +17,15 @@ class LivesController < ApplicationController
 
   def create
     @life = Life.new(life_params)
-
-    if params[:life].photo.key.present?
-      cloudinary_response = Cloudinary::Uploader.upload(params[:life].photo.key.tempfile.path)
-      @life.photo.key = cloudinary_response['secure_url']
-    end
+    @life.owner_id = current_user.id
+    @life.save
 
     if @life.save
-      redirect_to root_path()
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
   end
-
 
   private
 
@@ -38,10 +34,10 @@ class LivesController < ApplicationController
   end
 
   def set_user
-    @life = current_user.lives.find(params[:id])
+    @user = current_user
   end
 
   def life_params
-    params.require(:life).permit(:title, :price_per_day, :description, :city, :owner_id)
+    params.require(:life).permit(:title, :price_per_day, :description, :owner_id, :photo)
   end
 end
