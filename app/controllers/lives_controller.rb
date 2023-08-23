@@ -1,5 +1,5 @@
 class LivesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_life, only: [ :show ]
   before_action :set_user, only: [:edit, :update, :destroy]
 
