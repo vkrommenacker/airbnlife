@@ -1,6 +1,9 @@
 class LivesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_life, only: [ :show ]
+  before_action :set_user, only: [:edit, :update, :destroy]
+
+
   def index
     @lives = Life.all
   end
@@ -21,7 +24,7 @@ class LivesController < ApplicationController
     end
 
     if @life.save
-      redirect_to life_path(@life)
+      redirect_to root_path()
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +37,11 @@ class LivesController < ApplicationController
     @life = Life.find(params[:id])
   end
 
+  def set_user
+    @life = current_user.lives.find(params[:id])
+  end
+
   def life_params
-    params.require(:life).permit(:name, :price_per_day, :description, :picture_url, :city, :address, :owner_id)
+    params.require(:life).permit(:title, :price_per_day, :description, :picture_url, :city, :owner_id)
   end
 end
