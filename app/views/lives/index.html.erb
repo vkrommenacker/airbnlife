@@ -12,10 +12,10 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Offer your life?", new_life_path, class: "btn btn-primary" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -38,11 +38,13 @@
 <div class="lives-cards">
   <% @lives.each do |life|%>
     <div class="life">
-      <h3><%= life.title %></h3>
-      <%= cl_image_tag life.photo.key, height: 300, width: 400, crop: :fill %>
-      <p><%= User.find(life.owner_id).city %></p>
-      <p><%= life.price_per_day.round%>€ per day </p>
-      <p><%= User.find(life.owner_id).first_name%> <%= User.find(life.owner_id).last_name.first%>.</p>
+      <%= link_to life_path(life), class: 'life-link', target:'_blank' do %>
+        <h3><%= life.title %></h3>
+          <%= cl_image_tag life.photo.key, height: 300, width: 400, crop: :fill %>
+            <p><%= User.find(life.owner_id).city %></p>
+            <p><%= life.price_per_day.round%>€ per day </p>
+            <p><%= User.find(life.owner_id).first_name%> <%= User.find(life.owner_id).last_name.first%>.</p>
+      <%end%>
     </div>
   <%end%>
 </div>
