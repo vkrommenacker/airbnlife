@@ -1,4 +1,5 @@
 class Life < ApplicationRecord
+  has_one_attached :photo
   belongs_to :owner, class_name: "User"
   attr_accessor :street_number, :street_name, :city, :country
 
