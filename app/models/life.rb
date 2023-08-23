@@ -4,6 +4,6 @@ class Life < ApplicationRecord
   attr_accessor :street_number, :street_name, :city, :country
 
   validates :price_per_day, presence: true, numericality: { greater_than: 0 }
-  validates :description, :picture_url, presence: true
+  validates :description, presence: true
   validates :title, presence: true, length: { maximum: 40 }
 end

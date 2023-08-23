@@ -18,9 +18,9 @@ class LivesController < ApplicationController
   def create
     @life = Life.new(life_params)
 
-    if params[:life][:picture_url].present?
-      cloudinary_response = Cloudinary::Uploader.upload(params[:life][:picture_url].tempfile.path)
-      @life.picture_url = cloudinary_response['secure_url']
+    if params[:life].photo.key.present?
+      cloudinary_response = Cloudinary::Uploader.upload(params[:life].photo.key.tempfile.path)
+      @life.photo.key = cloudinary_response['secure_url']
     end
 
     if @life.save
@@ -42,6 +42,6 @@ class LivesController < ApplicationController
   end
 
   def life_params
-    params.require(:life).permit(:title, :price_per_day, :description, :picture_url, :city, :owner_id)
+    params.require(:life).permit(:title, :price_per_day, :description, :city, :owner_id)
   end
 end
