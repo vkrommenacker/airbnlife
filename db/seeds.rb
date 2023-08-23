@@ -6,13 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require "open-uri"
 puts "Cleaning database..."
 
 Life.destroy_all
 User.destroy_all
-
-
 
 
 puts "Creating users..."
@@ -32,12 +29,8 @@ life1 = Life.create!(
   title: "Allez à lasso de votre vie!",
   price_per_day: "50",
   description: "Dans l'immensité de l'Ouest américain, le cowboy John chevauchait avec audace, veillant sur le bétail, bravant bandits et tempêtes. Ses nuits autour du feu tressaillaient d'histoires épiques, incrustant dans son regard le mélange unique d'aventure et de solitude des grands espaces.",
-  picture_url: "cgqx0cltd6rtt7ktryq4",
   owner_id: user1.id
 )
-file = URI.open("https://images.unsplash.com/photo-1691162534642-eb3779a8c231?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
-life1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-life1.save
 # _______________
 
 user2 = User.create!(
@@ -57,12 +50,8 @@ life2 = Life.create!(
   title: "Shine bright like a Diamond!",
   price_per_day: "60",
   description: "La vie d'un drag queen est une symphonie audacieuse de créativité et de transformation, où les identités se mêlent en une explosion de couleurs et de glamour. Sur scène, ces artistes captivent avec des performances captivantes, fusionnant l'art du maquillage, des costumes extravagants et des mouvements gracieux pour célébrer la diversité et défier les normes de genre.",
-  picture_url: "fg8nwubssfjo7mhthiei",
   owner_id: user2.id
 )
-file = URI.open("https://images.unsplash.com/photo-1627829190682-c7f88673daa1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")
-life2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-life2.save
 # _______________
 
 user3 = User.create!(
@@ -82,12 +71,8 @@ life3 = Life.create!(
   title: "Apprenez à être à fleur de pot...",
   price_per_day: "60",
   description: "La vie de fleuriste est un enchantement floral perpétuel. Chaque matin, l'atelier s'éveille avec l'éclat de couleurs vives et l'arôme doux des pétales. Les mains habiles sélectionnent avec soin les fleurs les plus exquises pour composer des créations qui évoquent des émotions uniques. Entre le ballet des tiges et le jeu de la lumière filtrant à travers les feuilles, le fleuriste cultive un lien profond avec la nature et partage des moments intimes avec chaque client, tissant ainsi une toile florale d'histoires et de sourires.",
-  picture_url: "ziv2mfe5qlj41sgczzbb",
   owner_id: user3.id
 )
-file = URI.open("https://plus.unsplash.com/premium_photo-1676996177410-d360bcf94bc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80")
-life3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-life3.save
 # _______________
 
 user4 = User.create!(
@@ -106,12 +91,8 @@ life4 = Life.create!(
   title: "S'il y en a pour un, il y en pour 10!",
   price_per_day: "35",
   description: "Être un père de famille nombreuse est un tourbillon joyeux de responsabilités et de moments inestimables, jonglant entre les rires enfantins, les aventures en groupe et les défis constants, tout en créant un foyer chaleureux et rempli d'amour. Chaque journée est une histoire unique, tissée d'amour fraternel, de rires partagés et de précieux souvenirs qui forgent des liens inébranlables au sein de cette tribu unie.",
-  picture_url: "hg2aey44nznleegut5cd",
   owner_id: user4.id
 )
-file = URI.open("https://images.unsplash.com/photo-1609253932702-796cbf3d3171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")
-life4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-life4.save
 # _______________
 
 
@@ -132,12 +113,8 @@ life5 = Life.create!(
   title: "Echec et math!",
   price_per_day: "65",
   description: "La vie de professeure de mathématiques est une quête d'illumination intellectuelle. Chaque jour, vous guidez les élèves à travers les dédales des nombres et des équations, éveillant la compréhension et la logique. Vous façonnez des esprits analytiques prêts à relever les défis mathématiques de la vie.",
-  picture_url: "hg2aey44nznleegut5cd",
   owner_id: user5.id
 )
-file = URI.open("https://images.unsplash.com/photo-1596496181871-9681eacf9764?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=886&q=80")
-life5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-life5.save
 # _______________
 
 user6 = User.create!(
@@ -156,12 +133,8 @@ life6 = Life.create!(
   title: "Besoin d'un bol d'Hair ?",
   price_per_day: "55",
   description: "La vie d'Edward aux Mains d'Argent, telle une danse entre l'art et la solitude, est marquée par sa dextérité extraordinaire pour sculpter des coiffures uniques. Dans l'ombre de ses mains singulières, il tisse des récits capillaires, offrant transformations et métamorphoses, tout en cherchant sa place dans un monde qui le perçoit à travers le prisme de sa différence.",
-  picture_url: "hg2aey44nznleegut5cd",
   owner_id: user6.id
 )
-file = URI.open("https://images.unsplash.com/photo-1553521041-d168abd31de3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80")
-life6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-life6.save
 # _______________
 
 
@@ -182,12 +155,8 @@ life7 = Life.create!(
   title: "Un peu de couleurs dans votre vie! ",
   price_per_day: "30",
   description: "Frida Calot, peintre passionnée, manie les pinceaux comme des extensions de son âme. À travers chaque toile, elle tisse des rêves et des émotions, mêlant les couleurs avec une grâce unique. Les paysages qu'elle crée sont des fenêtres ouvertes sur des mondes intérieurs, reflétant sa profonde connexion avec l'art et la puissance de la créativité. Chaque coup de pinceau de Frida évoque une histoire silencieuse, laissant une empreinte indélébile dans l'univers visuel qu'elle façonne.",
-  picture_url: "app/assets/images/peintre.jpg",
   owner_id: user7.id
 )
-file = URI.open("https://plus.unsplash.com/premium_photo-1675425206468-dc196f6decdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
-life7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-life7.save
 # _______________
 
 puts "Seeds done, congrats !"
