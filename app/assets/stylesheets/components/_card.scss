@@ -11,22 +11,13 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  width: 100vw;
-  min-height: 100vh;
-  background-color: #f0f0f0;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .cards-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .cards-container .box {
@@ -37,10 +28,14 @@ body {
 }
 
 .cards-container .box:hover .imgBox {
-  transform: translate(-3.5rem, -3.5rem);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-3rem, -3rem);
 }
 
 .cards-container .box:hover .content {
+  opacity: 1;
+  pointer-events: auto;
   transform: translate(3.5rem, 3.5rem);
 }
 
@@ -59,6 +54,7 @@ body {
   height: 30rem;
   object-fit: cover;
   resize: both;
+  border-radius: 10px;
 }
 
 .content {
@@ -70,17 +66,20 @@ body {
   padding: 1.5rem;
   display: flex;
   justify-content: center;
-  background-color: #fff;
+  background-color: $info;
   z-index: 1;
   align-items: flex-end;
   text-align: center;
+  opacity: 0; /* Commence avec une opacité de 0 pour le masquer */
+  // pointer-events: none; /* Empêche les interactions avec le contenu masqué */
   transition: 0.5s ease-in-out;
+  border-radius: 10px;
 }
 
 .content h2 {
   display: block;
   font-size: 2rem;
-  color: #111;
+  color: $success;
   font-weight: 500;
   line-height: 2rem;
   letter-spacing: 1px;
@@ -92,6 +91,7 @@ body {
   font-weight: 300;
   letter-spacing: 2px;
 }
+
 
 @media (max-width: 600px) {
   .cards-container .box:hover .content {

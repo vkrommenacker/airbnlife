@@ -1,3 +1,18 @@
+<div class=" row justify-content-center ">
+  <div class="col-5 sm-2 my-3 mb-4 pb-4 ">
+    <%= form_with url: lives_path, method: :get, class: "d-flex search-bar" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Prêt(e)pour une nouvelle aventure ?"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
+
+<h1 class="text-center m-4 p-4">Découvrez votre nouvelle vie avant de l'adopter!</h1>
+
 <div class="cards-container">
   <% @lives.each do |life| %>
     <div class="box">
@@ -7,7 +22,7 @@
         <% end %>
       </div>
       <div class="content">
-        <h2><%= life.title %></h2>
+        <h2><%= life.job_title.titleize %></h2>
         <%# <span><%= User.find(life.owner_id).city</span> %>
         <%# # <p><%= life.price_per_day.round€ per day</p> %>
         <%# <p><%= User.find(life.owner_id).first_name %>
