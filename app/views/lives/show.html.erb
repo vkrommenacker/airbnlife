@@ -1,18 +1,20 @@
-
 <div class="container card-life">
-
-
   <div class="image-life"><%= cl_image_tag @life.photo.key, width: 500, height: 600, crop: :fill %></div>
   <div class="card-life-infos">
     <h3><%= @life.title %></h3>
     <% user = User.find(@life.owner_id) %>
-    <p class="user-infos"><%=user.first_name %> <%= user.last_name.first%>. - <%= user.age %> ans - de <%= user.city %>, <%= user.country %></p>
+      <p class="user-infos"><%= user.first_name %> <%= user.last_name.first %>. - <%= user.age %> ans - de <%= user.city %>, <%= user.country %></p>
     <h3 class="pt-5">Pourquoi devenir <%= @life.job_title.titleize %> ?</h3>
-    <p><%= @life.description %></p>
-    <p>Deviens <strong><%= @life.job_title.titleize %></strong> </p>
-    <%= link_to new_life_booking_path(@life.id), class: "btn btn-success", style: "text-decoration: none" do%>
-    <button class ="btn btn-info bottom-right-btn">Je veux tester <i class="fa-solid fa-face-smile-beam fa-bounce" style="color: #347347;"></i></button>
-    <%end%>
+      <p><%= @life.description %></p>
+      <p>Deviens <strong><%= @life.job_title.titleize %></strong></p>
+  </div>
+
+
+  <div class="prix-button d-flex justify-content-center">
+    <div class="price"><strong>Prix à la journée : <%= number_to_currency(@life.price_per_day, unit: '€') %></strong></p></div>
+    <button class="btn btn-info bottom-right-btn">
+      Je veux tester <i class="fa-solid fa-face-smile-beam fa-bounce" style="color: #347347;"></i>
+    </button>
   </div>
 </div>
 
