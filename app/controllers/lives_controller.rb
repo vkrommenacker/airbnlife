@@ -6,6 +6,9 @@ class LivesController < ApplicationController
 
   def index
     @lives = Life.all
+    if params[:query].present?
+      @lives = @lives.where("job_title ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
