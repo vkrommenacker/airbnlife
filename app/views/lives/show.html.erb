@@ -10,7 +10,9 @@
     <h3 class="pt-5">Pourquoi devenir <%= @life.job_title.titleize %> ?</h3>
     <p><%= @life.description %></p>
     <p>Deviens <strong><%= @life.job_title.titleize %></strong> </p>
+    <%= link_to new_life_booking_path(@life.id), class: "btn btn-success", style: "text-decoration: none" do%>
     <button class ="btn btn-info bottom-right-btn">Je veux tester <i class="fa-solid fa-face-smile-beam fa-bounce" style="color: #347347;"></i></button>
+    <%end%>
   </div>
 </div>
 

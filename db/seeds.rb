@@ -9,9 +9,9 @@
 require "open-uri"
 puts "Cleaning database..."
 
+Booking.destroy_all
 Life.destroy_all
 User.destroy_all
-
 
 
 
@@ -67,6 +67,7 @@ life2 = Life.create!(
 file = URI.open("https://images.unsplash.com/photo-1627829190682-c7f88673daa1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")
 life2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 life2.save
+
 # _______________
 
 user3 = User.create!(
@@ -94,6 +95,7 @@ life3 = Life.create!(
 file = URI.open("https://plus.unsplash.com/premium_photo-1676996177410-d360bcf94bc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80")
 life3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 life3.save
+
 # _______________
 
 user4 = User.create!(
@@ -205,3 +207,20 @@ life7.save
 # _______________
 
 puts "Seeds done, congrats !"
+
+booking3 = Booking.create!(
+  life_id: life3.id,
+  renter_id: user2.id,
+  start_date: "24/08/2023",
+  end_date: "26/08/2023"
+)
+
+booking4 = Booking.create!(
+  life_id: life3.id,
+  renter_id: user4.id,
+  start_date: "24/08/2023",
+  end_date: "26/08/2023"
+)
+
+
+puts "Bookings done, congrats !"
