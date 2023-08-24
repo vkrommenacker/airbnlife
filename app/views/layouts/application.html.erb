@@ -16,6 +16,9 @@
   <% unless controller_name == 'pages' && action_name == 'home' %>
     <input type="checkbox" id="active">
     <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <%= link_to lives_path, class: "logo btn btn-success", style: "text-decoration: none" do%>
+    <span class="appli"><%= "AirbnLife " %><i class="fa-solid fa-hand-spock fa-bounce" style="color: #fdb465;"></i></span>
+    <% end %>
     <div class="navbar">
       <ul>
         <% if user_signed_in? %>
