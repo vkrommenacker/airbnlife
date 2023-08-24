@@ -18,7 +18,7 @@
   font-family: 'Lato', sans-serif;
   font-family: 'Oswald', sans-serif;
 }
-.wrapper{
+.navbar{
   position: fixed;
   top: 0;
   left: 0;
@@ -32,7 +32,7 @@
   clip-path: circle(25px at calc(100% - 45px) 45px);
   transition: all 0.3s ease-in-out;
 }
-#active:checked ~ .wrapper{
+#active:checked ~ .navbar{
   clip-path: circle(55%);
 }
 .menu-btn{
@@ -61,7 +61,7 @@
 #active:checked ~ .menu-btn i:before{
   content: "\f00d";
 }
-.wrapper ul{
+.navbar ul{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -69,10 +69,10 @@
   list-style: none;
   text-align: center;
 }
-.wrapper ul li{
+.navbar ul li{
   margin: 15px 0;
 }
-.wrapper ul li a{
+.navbar ul li a{
   color: none;
   text-decoration: none;
   font-size: 30px;
@@ -85,7 +85,7 @@
   line-height: 50px;
   transition: all 0.3s ease;
 }
-.wrapper ul li a:after{
+.navbar ul li a:after{
   position: absolute;
   content: "";
   background: #fefae0;
@@ -101,10 +101,10 @@
   animation: rotate 1.5s linear infinite;
   transition: transform 0.3s ease;
 }
-.wrapper ul li a:hover:after{
+.navbar ul li a:hover:after{
   transform: scaleY(1);
 }
-.wrapper ul li a:hover{
+.navbar ul li a:hover{
   color: #fff;
 }
 input[type="checkbox"]{
