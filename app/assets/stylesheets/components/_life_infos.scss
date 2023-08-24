@@ -1,0 +1,53 @@
+.card-life {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items:flex-start;
+  padding-left: 0px;
+  position: relative;
+}
+
+// .card-life .image-life {
+//   object-fit: cover;
+
+// }
+
+.card-life h3 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-life .user-infos {
+  font-style: italic;
+  margin: 0;
+}
+
+.card-life p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+.card-life .card-life-infos {
+  padding: 20px;
+}
+
+.bottom-right-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  font-family: "Nunito", "sans-serif";
+  border-radius: 5px;}
+
+.index-page .fixed-bottom {
+  width: 200px;
+  font-size: 20px;
+  font-family: "Nunito", "sans-serif";
+  border-radius: 5px;
+  margin: 20px;
+}
