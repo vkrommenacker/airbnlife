@@ -1,3 +1,9 @@
-<h1>lives#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1527856263669-12c3a0af2aa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80);">
+  <div class="container fixed-bottom bottom-center">
+    <h1>Testez vos vies avant de les adopter, grâce à <%= link_to lives_path, class: "btn btn-success", style: "text-decoration: none" do%>
+      <span class="appli"><%= "AirbnLife " %><i class="fa-solid fa-hand-spock fa-bounce" style="color: #fdb465;"></i></span>
+      <% end %>
+    <p>Explorez l'infini des possibles: pourquoi vivre une seule <strong>vie</strong>, quand on peut en avoir <strong>plusieurs</strong>?</p>
 
+  </div>
+</div>
