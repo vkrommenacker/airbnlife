@@ -3,7 +3,7 @@
 <div>
   <p><%= cl_image_tag @life.photo.key, width: 400, height: 300, crop: :fill %></p>
   <p><%= @life.description %></p>
-  <p><%= @life.price_per_day %></p>
+   <p><%= @life.description %></p>
   <%= User.find(@life.owner_id).first_name %>
 </div>
 
