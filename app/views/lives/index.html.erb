@@ -1,13 +1,34 @@
 <div class="lives-cards">
   <% @lives.each do |life|%>
     <div class="life">
-      <%= link_to life_path(life), class: 'life-link', target:'_blank' do %>
-        <h3><%= life.title %></h3>
+    <% @lives.each do |life|%>
+      <%# <%= link_to life_path(life), class: 'life-link' do %>
+
+        <%# <h3><%= life.title</h3> %>
+          <%# <%= cl_image_tag life.photo.key, height: 300, width: 400, crop: :fill %>
+            <%# <p><%= User.find(life.owner_id).city</p> %>
+            <%# <p><%= life.price_per_day.round€ /jours </p> %>
+            <%# <p><%= User.find(life.owner_id).first_name <%= User.find(life.owner_id).last_name.first.</p> %>
+      <%# <%end%>
+    <%# </div>
+  <%end%>
+<%# </div> %>
+
+<div class="container">
+  <% @lives.each do |life| %>
+    <div class="box">
+      <div class="imgBox">
+        <%= link_to life_path(life), class: 'life-link' do %>
           <%= cl_image_tag life.photo.key, height: 300, width: 400, crop: :fill %>
-            <p><%= User.find(life.owner_id).city %></p>
-            <p><%= life.price_per_day.round%>€ per day </p>
-            <p><%= User.find(life.owner_id).first_name%> <%= User.find(life.owner_id).last_name.first%>.</p>
-      <%end%>
+        <% end %>
+      </div>
+      <div class="content">
+        <h2><%= life.title %></h2>
+        <%# <span><%= User.find(life.owner_id).city</span> %>
+        <%# # <p><%= life.price_per_day.round€ per day</p> %>
+        <%# <p><%= User.find(life.owner_id).first_name %>
+        <%# <%= User.find(life.owner_id).last_name.first.</p> %>
+      </div>
     </div>
-  <%end%> 
+  <% end %>
 </div>
