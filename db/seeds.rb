@@ -59,7 +59,7 @@ user2 = User.create!(
 life2 = Life.create!(
   title: "Shine bright like a Diamond!",
   price_per_day: "60",
-  description: "La vie d'un drag queen est une symphonie audacieuse de créativité et de transformation, où les identités se mêlent en une explosion de couleurs et de glamour. Sur scène, ces artistes captivent avec des performances captivantes, fusionnant l'art du maquillage, des costumes extravagants et des mouvements gracieux pour célébrer la diversité et défier les normes de genre.",
+  description: "La vie d'une drag queen est une symphonie audacieuse de créativité et de transformation, où les identités se mêlent en une explosion de couleurs et de glamour. Sur scène, ces artistes captivent avec des performances captivantes, fusionnant l'art du maquillage, des costumes extravagants et des mouvements gracieux pour célébrer la diversité et défier les normes de genre.",
   # picture_url: "fg8nwubssfjo7mhthiei",
   owner_id: user2.id,
   job_title: "drag-queen"
@@ -216,6 +216,20 @@ booking3 = Booking.create!(
 )
 
 booking4 = Booking.create!(
+  life_id: life4.id,
+  renter_id: user2.id,
+  start_date: "17/07/2023",
+  end_date: "20/07/2023"
+)
+
+booking5 = Booking.create!(
+  life_id: life3.id,
+  renter_id: user2.id,
+  start_date: "29/06/2023",
+  end_date: "30/06/2023"
+)
+
+booking6 = Booking.create!(
   life_id: life3.id,
   renter_id: user4.id,
   start_date: "24/08/2023",

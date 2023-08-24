@@ -1,26 +1,33 @@
-<h1 class="text-center">Vos réservations de vies</h1>
+<div class="card m-5 bg-info rounded-pill">
+    <h1 class="text-center text- m-2 p-4">Votre historique de vie(s)</h1>
+</div>
 
+  <h2 class="container mt-4 mb-4">Vos expériences à venir:</h2>
+    <% @bookings.each do |booking| %>
+    <% owner = Life.find(booking.life_id).owner.id%>
+      <% if booking.end_date > Date.today%>
+        <div class="container card-booking">
+          <div class="image-life"><%= cl_image_tag Life.find(booking.life_id).photo.key,  width: 120, height: 120, crop: :fill %></div>
+          <div class="card-booking-infos">
+            <h2><%= Life.find(booking.life_id).job_title.titleize%></h2>
+              <p>avec <%=User.find(owner).first_name%> <%=User.find(owner).last_name.first%>. du <%= booking.start_date%> au <%=booking.end_date%>.</p>
+          </div>
+        </div>
+      <%end%>
+  <%end%>
+
+
+
+  <h2 class="container mt-4 mb-4">Vos expériences passées:</h2>
   <% @bookings.each do |booking| %>
   <% owner = Life.find(booking.life_id).owner.id%>
-    <% if booking.end_date > Date.today%>
-      <h2 class="container">Vos expériences à venir</h2>
+    <% if booking.end_date < Date.today%>
       <div class="container card-booking">
         <div class="image-life"><%= cl_image_tag Life.find(booking.life_id).photo.key,  width: 120, height: 120, crop: :fill %></div>
         <div class="card-booking-infos">
           <h2><%= Life.find(booking.life_id).job_title.titleize%></h2>
-          <p>avec <%=User.find(owner).first_name%> <%=User.find(owner).last_name.first%>. du <%= booking.start_date%> au <%=booking.end_date%>.</p>
+            <p>avec <%=User.find(owner).first_name%> <%=User.find(owner).last_name.first%>. du <%= booking.start_date%> au <%=booking.end_date%>.</p>
         </div>
       </div>
-        <%else%>
-          <h2 class="container">Vos expériences passées</h2>
-          <div class="container card-booking">
-            <div class="image-life"><%= cl_image_tag Life.find(booking.life_id).photo.key,  width: 120, height: 120, crop: :fill %></div>
-            <div class="card-booking-infos">
-              <h2><%= Life.find(booking.life_id).job_title.titleize%></h2>
-              <p>avec <%=User.find(owner).first_name%> <%=User.find(owner).last_name.first%>. du <%= booking.start_date%> au <%=booking.end_date%>.</p>
-            </div>
-          </div>
-  <%end %>
+    <%end%>
   <%end%>
-</div>
-</div>
