@@ -1,8 +1,26 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h1 class="text-center">Vos réservations de vies</h1>
 
-<% @bookings.each do |b|  %>
-  <%= b.start_date %>
-  <%= b.end_date %>
-  <%= User.find(b.renter_id).first_name %>
-<% end %>
+  <% @bookings.each do |booking| %>
+  <% owner = Life.find(booking.life_id).owner.id%>
+    <% if booking.end_date > Date.today%>
+      <h2 class="container">Vos expériences à venir</h2>
+      <div class="container card-booking">
+        <div class="image-life"><%= cl_image_tag Life.find(booking.life_id).photo.key,  width: 120, height: 120, crop: :fill %></div>
+        <div class="card-booking-infos">
+          <h2><%= Life.find(booking.life_id).job_title.titleize%></h2>
+          <p>avec <%=User.find(owner).first_name%> <%=User.find(owner).last_name.first%>. du <%= booking.start_date%> au <%=booking.end_date%>.</p>
+        </div>
+      </div>
+        <%else%>
+          <h2 class="container">Vos expériences passées</h2>
+          <div class="container card-booking">
+            <div class="image-life"><%= cl_image_tag Life.find(booking.life_id).photo.key,  width: 120, height: 120, crop: :fill %></div>
+            <div class="card-booking-infos">
+              <h2><%= Life.find(booking.life_id).job_title.titleize%></h2>
+              <p>avec <%=User.find(owner).first_name%> <%=User.find(owner).last_name.first%>. du <%= booking.start_date%> au <%=booking.end_date%>.</p>
+            </div>
+          </div>
+  <%end %>
+  <%end%>
+</div>
+</div>
