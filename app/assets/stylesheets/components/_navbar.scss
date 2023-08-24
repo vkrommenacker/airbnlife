@@ -1,22 +1,8 @@
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: white;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Nunito', 'PT Sans', sans-serif;
 }
 .navbar{
   position: fixed;
@@ -24,20 +10,19 @@
   left: 0;
   height: 100%;
   width: 100%;
-  /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
-  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
- /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
-  /* clip-path: circle(25px at calc(0% + 45px) 45px); */
   background: #347347;
   clip-path: circle(25px at calc(100% - 45px) 45px);
   transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
 #active:checked ~ .navbar{
   clip-path: circle(55%);
+  z-index: 3;
+  position: fixed;
 }
 .menu-btn{
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   right: 20px;
   /* left: 20px; */
   top: 20px;
@@ -47,16 +32,13 @@
   line-height: 50px;
   border-radius: 50%;
   font-size: 20px;
-  color: #fff;
+  color: #FAF7F6;
   cursor: pointer;
-  /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
-  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
- /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
   background: #347347;
   transition: all 0.3s ease-in-out;
 }
 #active:checked ~ .menu-btn{
-  color: #fff;
+  color: #FAF7F6;
 }
 #active:checked ~ .menu-btn i:before{
   content: "\f00d";
@@ -68,6 +50,7 @@
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
+  z-index: 3;
 }
 .navbar ul li{
   margin: 15px 0;
@@ -78,34 +61,34 @@
   font-size: 30px;
   font-weight: 500;
   padding: 5px 30px;
-  color: #fff;
+  color: #FAF7F6;
   border-radius: 50px;
   background: #347347;
   position: relative;
   line-height: 50px;
   transition: all 0.3s ease;
+  // z-index: 2;
 }
-.navbar ul li a:after{
+.navbar ul li a:after {
   position: absolute;
   content: "";
-  background: #fefae0;
-  //  background: linear-gradient(#606C38, #283618, #fefae0);
-  /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
   width: 104%;
   height: 110%;
   left: -2%;
-  top: -5%; /* if the font is 'Oswald'*/
+  top: -5%;
   border-radius: 50px;
   transform: scaleY(0);
-  z-index: -1;
-  animation: rotate 1.5s linear infinite;
+  animation: rotate 1.5s;
   transition: transform 0.3s ease;
 }
-.navbar ul li a:hover:after{
+
+.navbar ul li a:hover:after {
   transform: scaleY(1);
+  border: 2px solid #FAF7F6;
 }
-.navbar ul li a:hover{
-  color: #fff;
+
+.navbar ul li a:hover {
+  color: #FAF7F6;
 }
 input[type="checkbox"]{
   display: none;
@@ -115,7 +98,7 @@ input[type="checkbox"]{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  z-index: 3;
   text-align: center;
   width: 100%;
   color: #202020;
