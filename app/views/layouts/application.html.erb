@@ -16,21 +16,19 @@
     <div class="navbar">
       <ul>
         <% if user_signed_in? %>
-          <li><%= link_to "Accueil", root_path %></li>
           <li><%= link_to "Découvrir des vies", lives_path %></li>
           <li><%= link_to "Offrir ma vie", new_life_path %></li>
           <li><%= link_to "Mes réservations", bookings_path %></li>
-          <li><%= link_to "Paramètres", root_path %></li>
+          <li><%= link_to "Paramètres" %></li>
           <li><%= link_to "Me déconnecter", destroy_user_session_path, "data-turbo-method" => "delete" %></li>
-            <% else %>
-            <li><%= link_to "Accueil", root_path %></li>
-            <li><%= link_to "Me connecter", new_user_session_path %></li>
+        <% else %>
+          <li><%= link_to "Me connecter", new_user_session_path %></li>
         <% end %>
       </ul>
     </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <% end %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
+    <%= yield %>
 </body>
 </html>
