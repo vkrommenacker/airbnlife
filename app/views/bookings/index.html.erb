@@ -1,0 +1,8 @@
+<h1>Bookings#show</h1>
+<p>Find me in app/views/bookings/show.html.erb</p>
+
+<% @bookings.each do |b|  %>
+  <%= b.start_date %>
+  <%= b.end_date %>
+  <%= User.find(b.renter_id).first_name %>
+<% end %>

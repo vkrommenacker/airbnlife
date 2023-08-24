@@ -8,6 +8,9 @@
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=PT+Sans&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+    <%= javascript_importmap_tags %>
 </head>
 <body>
   <% unless controller_name == 'pages' && action_name == 'home' %>
