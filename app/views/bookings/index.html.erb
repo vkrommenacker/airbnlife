@@ -15,7 +15,7 @@
               <% number_of_days = (booking.end_date - booking.start_date).to_i %>
               <p class="total-price">Prix total: <%= (Life.find(booking.life_id).price_per_day * number_of_days).round %>€</p>
               </div>
-                <% if booking.start_date != Date.today%>
+                <% if booking.start_date > Date.today%>
                       <%= link_to booking_path(booking.id), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Etes vous sûr(e)s de vouloir annuler votre expérience?" } do %>
                       <i class="fa-solid fa-trash fa-3x mt-4" style="color: orange"></i>
                       <%end%>
