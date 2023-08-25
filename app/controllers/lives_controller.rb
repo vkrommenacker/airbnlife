@@ -24,7 +24,7 @@ class LivesController < ApplicationController
     @life.save
 
     if @life.save
-      redirect_to root_path
+      redirect_to lives_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -41,6 +41,6 @@ class LivesController < ApplicationController
   end
 
   def life_params
-    params.require(:life).permit(:title, :price_per_day, :description, :owner_id, :photo)
+    params.require(:life).permit(:title, :price_per_day, :description, :owner_id, :photo, :job_title)
   end
 end
