@@ -32,9 +32,20 @@
         <% end %>
       </ul>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render "shared/flashes" %>
   <% end %>
     <%= yield %>
+  <% unless controller_name == 'pages' && action_name == 'home' %>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  <div class="footer-copyright">
+    <%= "AirbnLife " %><i class="fa-solid fa-hand-spock fa-bounce" style="color: #fdb465;"></i></span>
+<%end%>
+  </div>
+</div>
 </body>
 </html>
