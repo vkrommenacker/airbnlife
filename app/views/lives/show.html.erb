@@ -11,7 +11,7 @@
         <h3 class="pt-5 text-center">Pourquoi devenir <%= @life.job_title.titleize %> ?</h3>
         <p class="life-description"><%= @life.description %></p>
       </div>
-        <div class="d-flex align-items-end justify-content-between footer">
+        <div class="d-flex align-items-end justify-content-between">
           <div class="price"><strong>Prix à la journée : <%= number_to_currency(@life.price_per_day, unit: '€') %></strong></p></div>
           <%= link_to new_life_booking_path(@life), class: "btn btn-info bottom-right-btn" do %>
              <span> Devenez <%= @life.job_title.titleize %> <i class="fa-solid fa-face-smile-beam fa-bounce" style="color: #347347;"></i> </span>
