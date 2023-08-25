@@ -5,24 +5,28 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-top: 10px;
   padding: 0;
+
+  .card-booking-infos {
+    padding: 16px;
+  }
+
+.card-booking-infos h2 {
+      font-size: 18px;
+      font-weight: bold;
+
+}}
+
+
+.card-booking-infos p {
+        font-size: 14px;
+        line-height: 1.4;
+        opacity: .7;
+        margin-bottom: 0;
+        margin-top: 8px;
 }
 
-
-.card-booking h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-booking p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-booking .card-booking-infos {
-  padding: 16px;
+.card-booking-infos .total-price {
+  color: rgb(148, 141, 141)
 }
