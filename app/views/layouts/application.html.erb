@@ -35,7 +35,7 @@
     <%= render "shared/flashes" %>
   <% end %>
     <%= yield %>
-  <% unless controller_name == 'pages' && action_name == 'home' %>
+  <% unless controller_name == 'pages' && action_name == 'home' || controller_name == 'bookings' && action_name == 'new' %>
   <div class="footer">
     <div class="footer-links">
       <a href="#"><i class="fab fa-instagram"></i></a>
