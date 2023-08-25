@@ -16,14 +16,14 @@
               <p class="total-price">Prix total: <%= (Life.find(booking.life_id).price_per_day * number_of_days).round %>€</p>
               </div>
                 <% if booking.start_date != Date.today%>
-                   <%= link_to bookings_path, class: "btn btn-warning bottom-right-btn bin" do %>
-                      <i class="fa-solid fa-trash" style="color: white;"></i>
+                      <%= link_to booking_path(booking.id), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Etes vous sûr(e)s de vouloir annuler votre expérience?" } do %>
+                      <i class="fa-solid fa-trash fa-3x mt-4" style="color: orange"></i>
+                      <%end%>
                   <%end%>
-          <%end%>
           </div>
         </div>
       <%end%>
-  <%end%>
+    <%end%>
 
   <h2 class="container mt-4 mb-4">Vos expériences passées:</h2>
   <% @bookings.each do |booking| %>

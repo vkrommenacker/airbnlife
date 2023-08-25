@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :lives, only: [:show, :create, :new] do
     resources :bookings, only: [:new, :create]
   end
+
+  resources :bookings, only: [:destroy]
 end
