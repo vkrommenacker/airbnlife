@@ -10,8 +10,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.renter_id = current_user.id
     @booking.life = Life.find(params[:life_id])
+
     if @booking.save
-      redirect_to bookings_path
+      redirect_to bookings_path, notice: 'Réservation créée avec succès.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,6 +34,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :renter_id, :life_id)
   end
-
-
 end
