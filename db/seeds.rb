@@ -232,21 +232,21 @@ booking3 = Booking.create!(
 
 booking4 = Booking.create!(
   life_id: life4.id,
-  renter_id: user2.id,
+  renter_id: user.id,
   start_date: "17/07/2023",
   end_date: "20/07/2023"
 )
 
 booking5 = Booking.create!(
   life_id: life1.id,
-  renter_id: user2.id,
+  renter_id: user.id,
   start_date: "29/06/2023",
   end_date: "30/06/2023"
 )
 
 booking6 = Booking.create!(
-  life_id: life3.id,
-  renter_id: user4.id,
+  life_id: life5.id,
+  renter_id: user.id,
   start_date: "24/08/2023",
   end_date: "26/08/2023"
 )
