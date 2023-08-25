@@ -5,20 +5,36 @@
   display: flex;
   align-items:flex-start;
   padding-left: 0px;
+  border-radius: 5px;
   position: relative;
-
 }
 
-// .card-life .image-life {
-//   object-fit: cover;
+.life-description {
+  text-align: justify;
 
-// }
+}
+.card-life-infos {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 .card-life h3 {
   font-size: 25px;
   font-weight: bold;
   margin: 0;
 }
+
+
+.card-life h2 {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+}
+
 
 .card-life .user-infos {
   font-style: italic;
@@ -35,33 +51,38 @@
 
 .card-life .card-life-infos {
   padding: 20px;
-  position: relative;
 }
 
 .bottom-right-btn {
-  position: absolute;
   bottom: 20px;
   right: 20px;
   font-size: 20px;
   font-family: "Nunito", "sans-serif";
   border-radius: 5px;}
 
-.price {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-size: 20px;
-  font-family: "Nunito", "sans-serif";
-  border-radius: 5px;}
+.index-page {
+    height: 50px;
+    width: 15%;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
 
-.index-page .fixed-bottom {
-  width: 200px;
-  font-size: 20px;
-  font-family: "Nunito", "sans-serif";
-  border-radius: 5px;
-  margin: 20px;
-}
+  .price {
+    line-height: 1.4;
+    margin-bottom: 0;
+    padding-top: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
 
-.prix-bouton {
-  margin-top: 300px;
-}
+  }
+  .bottom {
+    position: absolute;
+    bottom: 0;
+  }
