@@ -8,11 +8,18 @@
       <% if booking.end_date >= Date.today%>
         <div class="container card-booking">
           <div class="image-life"><%= cl_image_tag Life.find(booking.life_id).photo.key,  width: 120, height: 120, crop: :fill %></div>
-          <div class="card-booking-infos">
+          <div class="card-booking-infos alignement">
+            <div>
             <h2><%= Life.find(booking.life_id).job_title.titleize%></h2>
               <p>avec <%=User.find(owner).first_name%> <%=User.find(owner).last_name.first%>. du <%= booking.start_date%> au <%=booking.end_date%>.</p>
               <% number_of_days = (booking.end_date - booking.start_date).to_i %>
               <p class="total-price">Prix total: <%= (Life.find(booking.life_id).price_per_day * number_of_days).round %>€</p>
+              </div>
+                <% if booking.start_date != Date.today%>
+                   <%= link_to bookings_path, class: "btn btn-warning bottom-right-btn bin" do %>
+                      <i class="fa-solid fa-trash" style="color: white;"></i>
+                  <%end%>
+          <%end%>
           </div>
         </div>
       <%end%>
