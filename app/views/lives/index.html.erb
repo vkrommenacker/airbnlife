@@ -1,4 +1,4 @@
-<div class=" row justify-content-center ">
+<div class=" row justify-content-center mt-1">
   <div class="col-5">
     <%= form_with url: lives_path, method: :get, class: "d-flex search-bar" do %>
       <%= text_field_tag :query,
@@ -6,13 +6,15 @@
             class: "form-control",
             placeholder: "Prêt(e) pour une nouvelle vie ?"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-success" %>
+      <%= button_tag(type: "submit", class: "btn btn-success") do %>
+       <i class="fa-solid fa-magnifying-glass" style="color: #f5f5f5;"></i>
+      <% end %>
     <% end %>
   </div>
 </div>
 
 <div class="card m-5 bg-success rounded-pill">
-    <h1 class="text-center text- m-2 p-4">Découvrez votre nouvelle vie avant de l'adopter!</h1>
+    <h1 class="text-center text-white m-2 p-4">Découvrez votre nouvelle vie avant de l'adopter!</h1>
 </div>
 
 <div class="cards-container">
@@ -25,10 +27,6 @@
       </div>
       <div class="content">
         <h2><%= life.job_title.titleize %></h2>
-        <%# <span><%= User.find(life.owner_id).city</span> %>
-        <%# # <p><%= life.price_per_day.round€ per day</p> %>
-        <%# <p><%= User.find(life.owner_id).first_name %>
-        <%# <%= User.find(life.owner_id).last_name.first.</p> %>
       </div>
     </div>
   <% end %>
