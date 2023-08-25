@@ -208,11 +208,26 @@ life7.save
 
 puts "Seeds done, congrats !"
 
+user = User.create!(
+  first_name: "Camille",
+  last_name: "Dumont",
+  email: "airbnlife@example.com",
+  password: "airbnlife",
+  phone_number: "0789898989",
+  city: "Nantes",
+  country: "France",
+  street_number: "8",
+  street_name: "rue des Jardins",
+  birth_date: "19/01/1996",
+  age: 27
+)
+
+
 booking3 = Booking.create!(
   life_id: life3.id,
   renter_id: user2.id,
-  start_date: "24/08/2023",
-  end_date: "26/08/2023"
+  start_date: "27/08/2023",
+  end_date: "28/08/2023"
 )
 
 booking4 = Booking.create!(
@@ -223,7 +238,7 @@ booking4 = Booking.create!(
 )
 
 booking5 = Booking.create!(
-  life_id: life3.id,
+  life_id: life1.id,
   renter_id: user2.id,
   start_date: "29/06/2023",
   end_date: "30/06/2023"

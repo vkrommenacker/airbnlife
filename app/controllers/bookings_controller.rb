@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.renter_id = current_user.id
     @booking.life = Life.find(params[:life_id])
     if @booking.save
-      redirect_to lives_path
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
