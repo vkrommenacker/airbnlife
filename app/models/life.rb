@@ -7,4 +7,5 @@ class Life < ApplicationRecord
   validates :price_per_day, presence: true, numericality: { greater_than: 0 }
   validates :description, presence: true
   validates :title, presence: true, length: { maximum: 40 }
+  validates :job_title, presence: true
 end

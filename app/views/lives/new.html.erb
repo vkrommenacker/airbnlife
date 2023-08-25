@@ -1,18 +1,23 @@
-<h1>Offrir ma vie à louer</h1>
+<div class="container">
+  <div class="card-create m-5 bg-warning rounded-pill" style="opacity: 0.7;">
+    <h1 class="text-center m-2 p-3 text-white">Offrir ma vie à louer</h1>
+  </div>
 
-  <div class="container">
-      <%= simple_form_for @life, html: { multipart: true } do |f| %>
-      <%= f.input :title %>
-      <%= f.input :price_per_day %>
-      <%= f.input :description %>
-      <%# <%= f.input :street_number %>
-      <%# <%= f.input :street_name %>
-      <%# <%= f.input :city %>
-      <%# <%= f.input :country %>
-      <%# <%= f.input :owner_id %>
+  <div class="mx-auto p-3 border rounded" style="max-width: 600px; font-size: 16px;">
+    <%= simple_form_for @life, html: { multipart: true } do |f| %>
+      <%= f.input :job_title, label: "Métier", input_html: { style: "font-size: 14px;" } %>
+      <%= f.input :title, label: "Titre de votre annonce", input_html: { style: "font-size: 14px;" } %>
+      <%= f.input :price_per_day, label: "Prix par jour", input_html: { style: "font-size: 14px;" } %>
+      <%= f.input :description, label: "Description de votre annonce", input_html: { style: "font-size: 14px;" } %>
+      <%= f.input :photo, as: :file, input_html: { style: "font-size: 14px;" } %>
 
-      <%= f.input :photo, as: :file %>
+      <div class="text-left font-weight-light mt-3">
+        <small class="form-text text-muted">Champs obligatoires: ...*</small>
+      </div>
 
-      <%= f.button :submit, class: "btn btn-primary"%>
+      <div class="text-center mt-4">
+        <%= f.submit 'Valider ma vie', class: 'btn btn-warning text-white rounded-pill', style: 'opacity: 0.7; font-size: 18px;' %>
+      </div>
     <% end %>
   </div>
+</div>
