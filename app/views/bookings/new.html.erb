@@ -7,10 +7,11 @@
     </h1>
   </div>
 
-  <div class="mx-auto p-3 border rounded" style="max-width: 600px; font-size: 16px;">
+  <div class="mx-auto p-3 border rounded" style="max-width: 650px; font-size: 16px;">
     <%= simple_form_for [@life, @booking] do |f| %>
       <%= f.input :start_date, label: "Début", as: :string, input_html: { data: { controller: "datepicker" } }, style: "font-size: 14px;" %>
       <%= f.input :end_date, label: "Fin", as: :string, input_html: { data: { controller: "datepicker" } }, style: "font-size: 14px;" %>
+      <p class="text-justify">Le prix total de votre expérience sera disponible depuis la page de vos réservations.</p>
       <%= f.button :submit, 'Valider ma réservation', class: 'btn btn-primary text-white rounded-pill', style: 'opacity: 0.7; font-size: 18px;' %>
     <% end %>
   </div>
